@@ -2,7 +2,6 @@ from openpyxl import load_workbook as lwb
 import pandas as pd
 import streamlit as st
 
-sqm = 'm²'
 ref = []
 
 latest_file = "Available stock.xlsx"
@@ -22,10 +21,10 @@ for a,b in modref:
 for a,b,c,d,e,f,g,h,i,j,k,*l in stockfile:
     for x,y in ref:
         if b.value == x:
-            stocklist.append((y[0],y[1],str(h.value)+sqm,str(k.value)))
+            stocklist.append((y[0],y[1],h.value,str(k.value)))
 
 sorted_list = sorted(stocklist)
-df = pd.DataFrame(data=sorted_list, columns=('RANGE','COLOUR','QTY','BATCH'))
+df = pd.DataFrame(data=sorted_list, columns=('RANGE','COLOUR','QTY(m²)','BATCH'))
 
 range = list(set(df['RANGE']))
 range.sort()
