@@ -5,13 +5,13 @@ import streamlit as st
 sqm = 'm²'
 ref = []
 
-latest_file = "https://github.com/ChessRef/Mod/blob/main/Available%20stock.xlsx"
+latest_file = "Available stock.xlsx"
 st.write('MODULYSS STOCK'+'\n\n')
 st.write('The file loaded is '+latest_file+'\n')
 
 
 
-modref = lwb('https://github.com/ChessRef/Mod/blob/main/ModRef.xlsx').active
+modref = lwb('ModRef.xlsx').active
 stockfile = lwb(latest_file).active
 
 stocklist = []
